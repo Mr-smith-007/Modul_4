@@ -4,7 +4,7 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        var array = new int[] { -5, 6, -9, 1, -2, -3, 4, -1 ,2, 0 };
+        int [,] array = { {-5, 6, 9, 1, 2, -3},{ -8, 8, 1, 1, 2, -3 } };
         int kp = 0;
         foreach (int x in array)
         {

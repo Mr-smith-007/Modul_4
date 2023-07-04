@@ -4,15 +4,27 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+        var array = new int[] { 5, 6, 9, 1, 2, 3, 4 };
 
-        for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+        int t;
+
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
-                Console.Write(array[i, k] + " ");
-
-            Console.WriteLine();
+            for (int j = i + 1; j < array.Length; j++)
+            {
+                if (array[i] > array[j])
+                {
+                    t = array[i];
+                    array[i] = array[j];
+                    array[j] = t;
+                }
+            }
         }
 
+        foreach (var x in array)
+        {
+            Console.Write(x);
+        }
     }
 }
+

@@ -4,27 +4,15 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        var array = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-
-        int t;
-
-        for (int i = 0; i < array.Length; i++)
+        var array = new int[] { -5, 6, -9, 1, -2, -3, 4, -1 ,2, 0 };
+        int kp = 0;
+        foreach (int x in array)
         {
-            for (int j = i + 1; j < array.Length; j++)
-            {
-                if (array[i] > array[j])
-                {
-                    t = array[i];
-                    array[i] = array[j];
-                    array[j] = t;
-                }
-            }
+            if (x > 0)
+                kp++;
         }
-
-        foreach (var x in array)
-        {
-            Console.Write(x);
-        }
+        Console.WriteLine($"Количество положительных элементов массива {kp}");
+        
     }
 }
 

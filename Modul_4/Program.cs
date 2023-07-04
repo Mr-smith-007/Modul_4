@@ -2,28 +2,31 @@
 {
     public static void Main(string[] args)
     {
-        int[,] array = { {-5, 6, 9, 1, 2, -3}, {-8, 8, 1, 1, 2, -3} };
-        int t;
-        for (int i = 0; i < array.GetUpperBound(0) +1; i++)
+        (string Name, string LName, string Login, int LoginLenght, bool Pet, double Age, string[] FavColor) User;
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < array.GetUpperBound(1) +1; j++)
+            Console.WriteLine($"Пользователь №{i + 1} ");
+            Console.Write("Введите имя: ");
+            User.Name = Console.ReadLine();
+            Console.Write("Введите фамилию: ");
+            User.LName = Console.ReadLine();
+            Console.Write("Ввкдите логин: ");
+            User.Login = Console.ReadLine();
+            User.LoginLenght = User.Login.Length;
+            Console.Write("Есть ли у вас животные?(да/нет): ");
+            string xp = Console.ReadLine();
+            if (xp == "да")
+                User.Pet = true;
+            else
+                User.Pet = false;
+            Console.Write("Введите возраст пользователя: ");
+            User.Age = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите три любимых цвета:");
+            User.FavColor = new string[3];
+            foreach (string x in User.FavColor)
             {
-                for (int k = j + 1; k < array.GetUpperBound(1) + 1; k++)
-                {
-                    if (array[i, j] > array[i, k])
-                    {
-                        t = array[i, k];
-                        array[i, k] = array[i, j];
-                        array[i, j] = t;
-                    }
-                }
+                Console.ReadLine();
             }
-        }
-        for (int i = 0; i < array.GetLength(0); i++)
-        {
-            for (int j = 0; j < array.GetLength(1); j++)
-                Console.Write(array[i, j] + " ");
-            Console.WriteLine();
         }
         Console.ReadKey();
 

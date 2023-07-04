@@ -4,14 +4,14 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Введите имя");
-        var name = Console.ReadLine();
-        Console.WriteLine("Ваше имя наоборот:");
-        char [] eman = new char[name.Length];
-        for (int i = 0; i < eman.Length; i++)
+        int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+
+        for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
         {
-            eman[i] = name[name.Length -i -1];
-            Console.Write(eman[i] + " ");
+            for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
+                Console.Write(array[i, k] + " ");
+
+            Console.WriteLine();
         }
 
     }
